@@ -6,16 +6,28 @@
 import sys
 import subprocess
 
-SYMBOLS = [
+ICU4X_SYMBOLS = [
     "ICU4XBidi_create",
     "ICU4XBidi_for_text",
     "ICU4XBidiInfo_size",
     "ICU4XBidiInfo_level_at",
     "ICU4XBidiInfo_destroy",
-    "skiawasm_get_provider",
 
-    # "ICU4XDataProvider_destroy",
-    # "ICU4XBidi_destroy",
+    # "ICU4XBidiInfo_paragraph_at",
+    # "ICU4XBidiParagraph_range_start",
+    # "ICU4XBidiParagraph_range_end",
+    # "ICU4XBidiParagraph_reorder_line",
+]
+
+DIPLOMAT_SYMBOLS = [
+    "diplomat_init",
+    # "diplomat_simple_writeable",
+    # "diplomat_buffer_writeable_create",
+    # "diplomat_buffer_writeable_get_bytes",
+    # "diplomat_buffer_writeable_len",
+    # "diplomat_buffer_writeable_destroy",
+    "diplomat_alloc",
+    "diplomat_free",
 ]
 
 def main():
@@ -23,7 +35,13 @@ def main():
     is_export = False
     for arg in sys.argv[1:]:
         if is_export:
-            if not arg.startswith("ICU4X") or arg in SYMBOLS:
+            if arg.startswith("ICU4X"):
+                if arg in ICU4X_SYMBOLS:
+                    new_argv += ["--export", arg]
+            elif arg.startswith("diplomat"):
+                if arg in DIPLOMAT_SYMBOLS:
+                    new_argv += ["--export", arg]
+            else:
                 new_argv += ["--export", arg]
             is_export = False
         elif arg == "--export":
