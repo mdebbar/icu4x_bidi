@@ -7,15 +7,15 @@ import sys
 import subprocess
 
 SYMBOLS = [
-    "ICU4XDataProvider_create_from_byte_slice",
-    "ICU4XDataProvider_destroy",
     "ICU4XBidi_create",
     "ICU4XBidi_for_text",
-    "ICU4XBidi_destroy",
     "ICU4XBidiInfo_size",
     "ICU4XBidiInfo_level_at",
     "ICU4XBidiInfo_destroy",
     "skiawasm_get_provider",
+
+    # "ICU4XDataProvider_destroy",
+    # "ICU4XBidi_destroy",
 ]
 
 def main():
