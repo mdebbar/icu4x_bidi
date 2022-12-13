@@ -1,7 +1,29 @@
-# icu_capi_tinywasm [![crates.io](https://img.shields.io/crates/v/icu_capi_tinywasm)](https://crates.io/crates/icu_capi_tinywasm)
+# icu4x_bidi
 
-This is a Skia-optimized WASM build.
+This is an optimized WASM build of the Bidi bits of ICU4X.
 
-## More Information
+## Building
 
-For more information on development, authorship, contributing etc. please visit [`ICU4X home page`](https://github.com/unicode-org/icu4x).
+#### WASM
+
+To build the WASM module:
+
+```
+$ npm run build-wasm
+```
+
+#### JavaScript wrappers
+
+To bundle the JavaScript wrappers:
+
+```
+$ npm run build-js
+```
+
+#### Everything
+
+To build everything at once:
+
+```
+$ npm run build
+```

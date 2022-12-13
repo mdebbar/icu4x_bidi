@@ -32,13 +32,13 @@ function _createBidi(provider) {
   }
 }
 
-export function getBidiRegions(text) {
+export function getBidiRegions(text, defaultLevel) {
   if (text.length === 0) {
     return [];
   }
 
   const textBuf = DiplomatBuf.str(wasm, text);
-  const bidiInfo = wasm.ICU4XBidi_for_text(bidi, textBuf.ptr, textBuf.size, undefined);
+  const bidiInfo = wasm.ICU4XBidi_for_text(bidi, textBuf.ptr, textBuf.size, defaultLevel);
 
   const bidiRegions = [];
   const size = wasm.ICU4XBidiInfo_size(bidiInfo);

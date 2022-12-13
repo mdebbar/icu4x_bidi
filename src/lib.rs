@@ -8,8 +8,8 @@ extern crate icu_capi;
 
 #[cfg(not(feature = "empty_data"))]
 mod data {
-    include!("../icu4x_data_skiawasm_bake/mod.rs");
-    include!("../icu4x_data_skiawasm_bake/any.rs");
+    include!("../icu4x_bidi_data_bake/mod.rs");
+    include!("../icu4x_bidi_data_bake/any.rs");
 
     pub fn get_provider() -> Box<dyn icu_provider::AnyProvider> {
         Box::new(BakedDataProvider)

@@ -1,8 +1,10 @@
 dist/
 node_modules/
+target/
 
 lib/
-target/
-icu4x_data_skiawasm.postcard
-icu_capi_skiawasm.wasm
-icu4x_data_skiawasm_bake/
+
+icu4x_bidi_data_bake/
+
+*.postcard
+*.wasm

@@ -1,8 +1,11 @@
 {
-    "main": "icu_capi_skiawasm.js",
+    "main": "icu4x_bidi.js",
     "type": "module",
     "scripts": {
-        "build": "rm -rf ./dist && webpack"
+        "clean": "rm -rf ./dist",
+        "build-wasm": "./build.sh",
+        "build-js": "webpack",
+        "build": "npm run clean && npm run build-wasm && npm run build-js"
     },
     "devDependencies": {
         "webpack": "^5.75.0",

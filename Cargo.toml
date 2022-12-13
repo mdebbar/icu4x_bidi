@@ -1,6 +1,6 @@
 [package]
-name = "icu_capi_skiawasm"
-description = "Skia WASM bindings for ICU4X"
+name = "icu4x_bidi"
+description = "WASM bindings for ICU4X Bidi"
 publish = false
 version = "0.1.0"
 authors = [

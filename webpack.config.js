@@ -4,14 +4,14 @@ const RELEASE = true;
 
 export default {
   entry: {
-    icu_capi_skiawasm: './icu_capi_skiawasm.js',
+    icu4x_bidi: './icu4x_bidi.js',
   },
   output: {
-    library: 'ICU4XPromise',
+    library: 'ICU4XBidiPromise',
     // To preserve the original name of the wasm file.
     assetModuleFilename: '[name][ext]',
   },
-  mode: RELEASE ? "production" : "development",
+  mode: "production",
   experiments: {
     topLevelAwait: true,
   },
