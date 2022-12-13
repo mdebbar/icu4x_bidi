@@ -7,19 +7,15 @@ name = "icu_capi_skiawasm"
 description = "Skia WASM bindings for ICU4X"
 publish = false
 version = "0.1.0"
-authors = ["The ICU4X Project Developers"]
+authors = ["The ICU4X Project Developers", "mdebbar@google.com"]
 edition = "2021"
 resolver = "2"
-repository = "https://github.com/unicode-org/icu4x"
+repository = "https://github.com/mdebbar/icu4x_bidi"
 license-file = "LICENSE"
 categories = ["internationalization"]
 # Keep this in sync with other crates unless there are exceptions
 include = [
     "src/**/*",
-    "examples/**/*",
-    "benches/**/*",
-    "tests/**/*",
-    "include/**/*",
     "Cargo.toml",
     "LICENSE",
     "README.md"
@@ -31,7 +27,6 @@ path = "src/lib.rs"
 
 [dependencies.icu_capi]
 version = "1.0.0"
-path = "../diplomat"
 default-features = false
 features = [
     "any_provider",
@@ -39,11 +34,30 @@ features = [
 ]
 
 [dependencies]
-icu = { path = "../../components/icu", default-features = false }
-icu_provider = { path = "../../provider/core", default-features = false }
-icu_provider_adapters = { path = "../../provider/adapters", default-features = false }
-litemap = { path = "../../utils/litemap", default-features = false }
-zerovec = { path = "../../utils/zerovec", default-features = false }
+icu = { version = "1.0.0", default-features = false }
+icu_provider = { version = "1.0.1", default-features = false }
+icu_provider_adapters = { version = "1.0.0", default-features = false }
+icu_datagen = { version = "1.0.2", default-features = false }
+litemap = { version = "0.6.0", default-features = false }
+zerovec = { version = "0.9.1", default-features = false }
 
 [features]
 empty_data = []
+
+# LTO is needed for WASM and other size-optimized builds,
+# and it improve the performance of benchmarks
+[profile.release]
+lto = true
+
+[profile.release-opt-size]
+inherits = "release"
+opt-level = "s"
+
+# Enable debug information specifically for memory profiling.
+# https://docs.rs/dhat/0.2.1/dhat/#configuration
+#
+# 2021-01-08: This would be nicer as a named profile, e.g. [profile.memory]
+# https://github.com/rust-lang/cargo/issues/6988
+[profile.bench]
+debug = true
+debug-assertions = false
