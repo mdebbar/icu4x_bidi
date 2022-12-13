@@ -12,13 +12,9 @@ SYMBOLS = [
     "ICU4XBidi_create",
     "ICU4XBidi_for_text",
     "ICU4XBidi_destroy",
-    "ICU4XBidiInfo_paragraph_count",
-    "ICU4XBidiInfo_paragraph_at",
+    "ICU4XBidiInfo_size",
+    "ICU4XBidiInfo_level_at",
     "ICU4XBidiInfo_destroy",
-    "ICU4XBidiParagraph_range_start",
-    "ICU4XBidiParagraph_range_end",
-    "ICU4XBidiParagraph_reorder_line",
-    "ICU4XBidiParagraph_destroy",
     "skiawasm_get_provider",
 ]
 
