@@ -1,25 +1,17 @@
-# This file is part of ICU4X. For terms of use, please see the file
-# called LICENSE at the top level of the ICU4X source tree
-# (online at: https://github.com/unicode-org/icu4x/blob/main/LICENSE ).
-
 [package]
 name = "icu_capi_skiawasm"
 description = "Skia WASM bindings for ICU4X"
 publish = false
 version = "0.1.0"
-authors = ["The ICU4X Project Developers", "mdebbar@google.com"]
+authors = [
+    "Manish Goregaokar <manishsmail@gmail.com>",
+    "Mouad Debbar <mdebbar@google.com>",
+]
 edition = "2021"
 resolver = "2"
 repository = "https://github.com/mdebbar/icu4x_bidi"
 license-file = "LICENSE"
 categories = ["internationalization"]
-# Keep this in sync with other crates unless there are exceptions
-include = [
-    "src/**/*",
-    "Cargo.toml",
-    "LICENSE",
-    "README.md"
-]
 
 [lib]
 crate-type = ["cdylib"]
