@@ -77,6 +77,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "icu"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "76c2ccbfb896b9b61490602e9a5313c6ff5f5eb32545a591f70556630b154a88"
+dependencies = [
+ "icu_calendar",
+ "icu_collator",
+ "icu_collections",
+ "icu_datetime",
+ "icu_decimal",
+ "icu_list",
+ "icu_locid",
+ "icu_locid_transform",
+ "icu_normalizer",
+ "icu_plurals",
+ "icu_properties",
+ "icu_provider",
+ "icu_timezone",
+]
+
+[[package]]
 name = "icu_calendar"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -125,9 +146,12 @@ dependencies = [
 name = "icu_capi_skiawasm"
 version = "0.1.0"
 dependencies = [
+ "icu",
  "icu_capi",
  "icu_provider",
  "icu_provider_adapters",
+ "litemap",
+ "zerovec",
 ]
 
 [[package]]

@@ -3,6 +3,11 @@
 # called LICENSE at the top level of the ICU4X source tree
 # (online at: https://github.com/unicode-org/icu4x/blob/main/LICENSE ).
 
+#######################################################################
+# Before you run this script for the first time, you have to do this: #
+# $ cargo install icu_datagen --features bin,experimental             #
+#######################################################################
+
 set -e
 
 # Set toolchain variable to a default if not defined
@@ -35,8 +40,7 @@ if ! test -f "icu4x_data_skiawasm_bake"; then
     echo "Regen all data"
 
     # Regen all data
-    cargo run --manifest-path ../../provider/datagen/Cargo.toml \
-        --features=bin,experimental -- \
+    icu4x-datagen \
         --all-locales \
         --keys-for-bin target/wasm32-unknown-unknown/release/icu_capi_skiawasm.wasm \
         --cldr-tag 41.0.0 \
