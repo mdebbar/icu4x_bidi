@@ -34,12 +34,8 @@ features = [
 ]
 
 [dependencies]
-icu = { version = "1.0.0", default-features = false }
-icu_provider = { version = "1.0.1", default-features = false }
 icu_provider_adapters = { version = "1.0.0", default-features = false }
-icu_datagen = { version = "1.0.2", default-features = false }
-litemap = { version = "0.6.0", default-features = false }
-zerovec = { version = "0.9.1", default-features = false }
+icu_provider = { version = "1.0.0", default-features = false }
 
 [features]
 empty_data = []
