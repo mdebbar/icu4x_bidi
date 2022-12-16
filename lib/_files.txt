@@ -1,0 +1,8 @@
+diplomat-wasm.mjs
+diplomat-runtime.js
+ICU4XBidi.js
+ICU4XBidiDirection.js
+ICU4XBidiInfo.js
+ICU4XBidiParagraph.js
+ICU4XDataProvider.js
+ICU4XError.js
